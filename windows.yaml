@@ -13,4 +13,5 @@
     - name: update package 
       win_updates:
         category_names: '*'
-        reboot: true  
+        reboot: true
+

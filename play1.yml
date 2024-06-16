@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: ws ds
   become: yes
   gather_facts: 1
   tasks:
@@ -10,7 +10,7 @@
         update_cache: yes
       when: ansible_os_family=="Debian"
       tags:
-        - ng
+        - ngnix
     - name: install httpd on redhat
       package:
         name: httpd
@@ -38,6 +38,8 @@
       register: file_output
       tags:
         - cfil
+        - f
+        - g
     - name: create directory
       file: 
         path: /tmp/os
@@ -46,6 +48,6 @@
       copy:
         dest: /var/www/html/index.html
         content: "<h1>This is created from Ansible server!<h1>"
-    - name: 
+    - name: read data
       debug: 
-        var: file_output.dif.before.path
+        var: file_output.diff.before.path

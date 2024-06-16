@@ -8,9 +8,11 @@
        yum:
          name: "{{item}}"
          state: present 
-       with_item :
+       with_items:
          - wget
          - finger
          - docker
-
-
+       loop:
+         - ntp
+         - curl 
+         - httpd
