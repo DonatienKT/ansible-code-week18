@@ -19,7 +19,7 @@ pipeline{
             steps{
                 sshPublisher(publishers: [sshPublisherDesc(configName: 'anbsible-server', transfers: [sshTransfer(cleanRemote: false, \
                 excludes: '', execCommand: 'ls', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, \
-                patternSeparator: '[, ]+', remoteDirectory: '/', remoteDirectorySDF: false, removePrefix: '', \
+                patternSeparator: '[, ]+', remoteDirectory: '/ansible-dev', remoteDirectorySDF: false, removePrefix: '', \
                 sourceFiles: 'ansible-${BUILD_ID}.zip')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
 
             }
