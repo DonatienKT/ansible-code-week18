@@ -12,7 +12,7 @@
           - wget
           - lsof
           - passwd
-          - unzip
+          - unzip 
           - java-11*
 
     - name: create directory
