@@ -10,7 +10,7 @@
         name:
           - docker
           - wget
-          - isof
+          - lsof
           - passwd
           - unzip
           - java-11*
